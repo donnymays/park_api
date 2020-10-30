@@ -1,5 +1,5 @@
 class Park < ApplicationRecord
-  validates :name, :park_type, :description, :state_name, :amenities, :entrace_fee, presence: true
+  validates :name, :park_type, :description, :state_name, :amenities, :entrance_fee, presence: true
 
   scope :name_search, -> (park_name) { where("name ilike ?", "%#{park_name}%") }
 
