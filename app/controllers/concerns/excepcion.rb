@@ -15,6 +15,5 @@ module Excepcion
     rescue_from TypeError do |exception|
       json_response( {  message:exception.message }, 500)
     end
-
   end
 end

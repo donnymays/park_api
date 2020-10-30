@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'get all parks route', :type => :request do
   let!(:parks) { FactoryBot.create_list(:park, 20) }
 
-  before { get '/parks' }
+  before { get '/parks', params: { access_token: '38d0b14f74d6b7b831ce3d76dae29da6id' } }
 
   # Test for header
   it 'returns status code 200' do

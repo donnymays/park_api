@@ -1,6 +1,6 @@
 class ParksController < ApplicationController 
 
-  before_action :restrict_access
+  # before_action :restrict_access
 
   def index
     if params[:name]
