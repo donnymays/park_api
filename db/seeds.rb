@@ -6,7 +6,7 @@ class Seed
     end
 
     def generate_parks
-      park_type = ['national', 'state']
+      park_type = ['National', 'State']
       20.times do |i|
         park = Park.create!(
           name: Faker::Address.city + " Park",

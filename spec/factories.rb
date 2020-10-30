@@ -1,4 +1,5 @@
 FactoryBot.define do
+  park_type = ['National', 'State']
   factory(:park) do
     name {Faker::Address.city + " Park"}
     type_name {park_type.sample} 

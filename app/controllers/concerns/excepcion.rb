@@ -1,6 +1,6 @@
 require 'active_support/concern'
 
-module Error
+module Excepcion
   extend ActiveSupport::Concern 
   included do
 
