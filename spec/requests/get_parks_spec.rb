@@ -12,7 +12,7 @@ describe 'get all parks route', :type => :request do
 
   # Test for body
   it 'returns all parks' do
-    expect(JSON.parse(response.body).size).to eq(20)
+    expect(JSON.parse(response.body).size).to eq(5)
   end
 end
 

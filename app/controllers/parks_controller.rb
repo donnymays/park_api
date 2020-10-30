@@ -1,5 +1,4 @@
 class ParksController < ApplicationController 
-
   # before_action :restrict_access
 
   def index
@@ -9,7 +8,7 @@ class ParksController < ApplicationController
     if params[:park_type]
       park_type_input = params[:park_type]
     end
-    @parks = Park.search(park_name, park_type_input)
+    @parks = Park.search(park_name, park_type_input).order(:name).page(params[:page])
     json_response(@parks)
   end
 
@@ -55,4 +54,5 @@ class ParksController < ApplicationController
     api_key = ApiKey.find_by_access_token(params[:access_token])
     head :unauthorized unless api_key
   end
+
 end
