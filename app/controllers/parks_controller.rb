@@ -1,4 +1,7 @@
 class ParksController < ApplicationController 
+
+  before_action :restrict_access
+
   def index
     if params[:name]
       park_name = params[:name]
@@ -46,5 +49,10 @@ class ParksController < ApplicationController
   private
   def park_params
     params.permit(:name, :park_type, :description, :state_name, :amenities, :entrance_fee)
+  end
+
+  def restrict_access
+    api_key = ApiKey.find_by_access_token(params[:access_token])
+    head :unauthorized unless api_key
   end
 end
