@@ -20,6 +20,11 @@ class ParksController < ApplicationController
     json_response(@park)
   end
 
+  def create
+    @park = Park.create!(park_params)
+    json_response(@park, :created)
+  end
+
   private
   def park_params
     params.permit(:name, :park_type, :description, :state_name, :amenities, :entrance_fee)
