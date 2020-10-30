@@ -33,7 +33,16 @@ class ParksController < ApplicationController
       }
     end
   end
-  
+
+  def destroy
+    @park = Park.find(params[:id])
+    if@park.destroy!
+      render status: 200, json: {
+        message: "Park deleted"
+      }
+    end
+  end
+
   private
   def park_params
     params.permit(:name, :park_type, :description, :state_name, :amenities, :entrance_fee)
