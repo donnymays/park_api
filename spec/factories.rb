@@ -2,7 +2,7 @@ FactoryBot.define do
   park_type = ['National', 'State']
   factory(:park) do
     name {Faker::Address.city + " Park"}
-    type_name {park_type.sample} 
+    park_type {park_type.sample} 
     description {Faker::Restaurant.review} 
     state_name {Faker::Address.state}
     amenities {Faker::Lorem.words}

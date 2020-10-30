@@ -3,10 +3,10 @@ class ParksController < ApplicationController
     if params[:name]
       park_name = params[:name]
     end
-    if params[:type_name]
-      type_name_input = params[:type_name]
+    if params[:park_type]
+      park_type_input = params[:park_type]
     end
-    @parks = Park.search(park_name, type_name_input)
+    @parks = Park.search(park_name, park_type_input)
     json_response(@parks)
   end
 
@@ -22,6 +22,6 @@ class ParksController < ApplicationController
 
   private
   def park_params
-    params.permit(:name, :type_name, :description, :state_name, :amenities, :entrace_fee)
+    params.permit(:name, :park_type, :description, :state_name, :amenities, :entrace_fee)
   end
 end
