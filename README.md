@@ -54,9 +54,13 @@ A README that thoroughly documents all endpoints, including parameters that can 
 | GET | /parks/:id | READ |Returns a single park object by id |
 | GET | /explore_parks/random | READ | Returns a random park object |
 | POST | /parks | CREATE | Adds a new park object |
-| PATCH | parks/:id | UPDATE | Updates a park object id |
+| PATCH | parks/:id | UPDATE | Updates a park object by id |
 | DELETE | parks/:id | DELETE | Deletes a park object by id |
 
+- To make a POST request, after "/parks" enter "?[parameter]=[your parameter]" seperating each parameter with "&"
+- ex: "http://localhost3000/?name=acadia&park_type=national&description=easternmost park in the united states&state_name=maine&amenities=camping, hiking&entrance_fee=25"
+- To make a PATCH request after /park/[id of park you'd like to update] enter "?[parmeter to be updated]=[updated parameter]"
+- ex: "http://localhost:3000/parks/67?name=Denali"
 
 ## Known Bugs
 _There are no known bugs at this time_
